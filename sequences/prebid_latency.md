@@ -131,6 +131,8 @@ sequenceDiagram
 | requestBids(≒300ms)からの遅れ | 約 100〜400ms | 約 400〜900ms |
 | 初回オークションの入札リクエストに eids が乗るか | ほぼ乗らない | 乗らない |
 
+関連: pubProvidedId ではなく専用の User ID サブモジュール(王道方式)にした場合の比較は [prebid_userid_module.md](prebid_userid_module.md) を参照。
+
 - `auctionDelay` がデフォルト 0 のため、Prebid は ID を待たずに requestBids → fluct への入札リクエストを送る。nidan の戻りはどちらのケースでもそれより遅く、`mergeConfig` + `refreshUserIds` による登録は**初回オークション終了後**になる。連携 ID が効くのは次回オークション(リフレッシュ or 次ページ)から。
 - 両ケースに共通する最大の恒常要因は DaisySync JSONP。daisyId が localStorage に永続化されないため、再訪問でも毎ページビューで docomo ドメインへの往復(約 300〜450ms)が必ず発生する。
 - 対策の方向性: `userSync.auctionDelay` の設定(例: 200〜500ms)で初回オークションを ID 取得まで待たせる、daisyId のキャッシュ化、NidanSync と DaisySync の並列化など。
