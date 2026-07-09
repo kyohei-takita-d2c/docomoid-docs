@@ -6,7 +6,7 @@ Prebid 等の呼び出し元が発行の遅延に巻き込まれる([prebid_id_i
 
 ## 前提(合意事項)
 
-1. **nidanId は回線認証の ID**。発行チェーンの起点は必ず SUID Proxy(JSONP / リダイレクト経由)であり、docomo 回線経由のときのみ発行できる(pre API に docomo IP 帯域チェックあり)。**初回の発行は原理的にオークション等へ間に合わないもの**として扱い、取得を邪魔しないバックグラウンド処理に切り出す。実際の発行フローは NidanID 発行フロー図(`nidan_id_publication.md`)、API 実装は [d2c-zeus/nidan-app](https://github.com/d2c-zeus/nidan-app) を参照。
+1. **nidanId は回線認証の ID**。発行チェーンの起点は必ず SUID Proxy(JSONP / リダイレクト経由)であり、docomo 回線経由のときのみ発行できる(pre API に docomo IP 帯域チェックあり)。**初回の発行は原理的にオークション等へ間に合わないもの**として扱い、取得を邪魔しないバックグラウンド処理に切り出す。実際の発行フローは [NidanID 発行フロー図(nidan_id_publication.md)](https://github.com/d2c-zeus/docs/blob/master/basic/nidan_id_publication.md)、API 実装は [d2c-zeus/nidan-app](https://github.com/d2c-zeus/nidan-app) を参照。
 2. **daisyId は daisy システムが docomo ドメインの 1st party Cookie として発行**している。現行の「CloudFront 代替ドメインで Cookie を間接的に読む」方式をやめ、**`nidan.addlv.smt.docomo.ne.jp` のドメイン移管を受けて、そのドメイン上に daisy sync API を立て、Cookie を直接受け取る**。daisyId はドコモドメイン 1st party Cookie としての利用が主目的のため、ITP 等の 3rd party Cookie 制限は問題にならない(その制限回避の受け皿が回線認証の nidanId という役割分担)。localStorage への焼き直しは不要。
 3. **publicationCookieDeleteRequest(receiver への Cookie 後始末)は発行系**なので、発行シーケンス側に寄せる。
 
@@ -41,7 +41,7 @@ sequenceDiagram
 
 ## 図 2: ID 発行シーケンス(バックグラウンド・nidanId 不在時のみ)
 
-NidanID 発行フロー図(`nidan_id_publication.md`)の現行発行フローを、取得から切り離して整理したもの。
+[NidanID 発行フロー図(nidan_id_publication.md)](https://github.com/d2c-zeus/docs/blob/master/basic/nidan_id_publication.md)の現行発行フローを、取得から切り離して整理したもの。
 
 ```mermaid
 sequenceDiagram

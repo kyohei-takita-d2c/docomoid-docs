@@ -1,6 +1,6 @@
 # nidan 概要シーケンス図
 
-対象: [d2c-zeus/nidan-hera-js の src/nidan](https://github.com/d2c-zeus/nidan-hera-js/tree/master/src/nidan) 配下の TypeScript 全体。呼び出し契機ごとの概要シーケンスと関連ドキュメントの入口。
+対象: [d2c-zeus/nidan-hera-js の src/nidan](https://github.com/d2c-zeus/nidan-hera-js/tree/main/src/nidan) 配下の TypeScript 全体。呼び出し契機ごとの概要シーケンスと関連ドキュメントの入口。
 
 ## ビルド構成(tsconfig / gulp より)
 

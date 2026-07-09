@@ -1,6 +1,6 @@
 # Hera からの呼び出しシーケンス
 
-対象: [d2c-zeus/nidan-hera-js の src/hera](https://github.com/d2c-zeus/nidan-hera-js/tree/master/src/hera) 配下。
+対象: [d2c-zeus/nidan-hera-js の src/hera](https://github.com/d2c-zeus/nidan-hera-js/tree/main/src/hera) 配下。
 
 Hera は**広告主ページに貼られる広告効果測定用の計測タグ**。
 弊社がユニークに付与しているユーザー ID(NidanID / DadUID)を特定するために、
