@@ -1,6 +1,6 @@
 # nidan 詳細シーケンス(タスクチェーンの粒度)
 
-対象: `origin_apps/nidan-hera-js/src/nidan` 配下の TypeScript 全体。
+対象: [d2c-zeus/nidan-hera-js の src/nidan](https://github.com/d2c-zeus/nidan-hera-js/tree/master/src/nidan) 配下の TypeScript 全体。
 内部のタスクチェーン(`Task<T>`)の動きまで含めた詳細版。概要版は [nidan_overview.md](nidan_overview.md) を参照。
 
 ```mermaid
